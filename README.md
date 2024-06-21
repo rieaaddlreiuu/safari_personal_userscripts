@@ -1,0 +1,2 @@
+# safari_personal_userscripts
+個人用のsafariブラウジングでの便利機能
