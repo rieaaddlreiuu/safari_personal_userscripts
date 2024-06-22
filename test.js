@@ -1,12 +1,18 @@
 // ==UserScript==
-// @name         test-script
-// @namespace    http://shukapin.com/
-// @version      0.1
-// @description  Simple UserScript for test
-// @author       Shukapin
-// @match        https://shukapin.com/*
-// @grant        GM_addStyle
+// @name arrow keys test
+// @namespace http://tampermonkey.net/
+// @version 0.1
+// @description try to take over the world!
+// @author You
+// @match http*
+// @grant none
 // ==/UserScript==
 
-alert("UserScriptが起動しました！");
-GM_addStyle("body { background-color: hotpink;}");
+(function() {
+
+    document.onload = function (){
+        var current_url = location.href;//現在のページのURLを取得
+        alert(current_url);
+    };
+    
+    })();
