@@ -4,7 +4,7 @@
 // @version 0.1
 // @description try to take over the world!
 // @author You
-// @match https://www.nicovideo.jp/*
+// @match https://www.nicovideo.jp/watch_tmp/*
 // @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
