@@ -9,7 +9,8 @@
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
-alert('やるぞっ')
+let texts = document.body.outerHTML;
+alert(texts);
 
 window.addEventListener('DOMContentLoaded', function() {
   let texts = document.body.outerHTML;
