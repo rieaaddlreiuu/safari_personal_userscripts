@@ -9,5 +9,5 @@
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
-let texts = document.outerHTML;
+let texts = document.body.outerHTML;
 alert(texts);
