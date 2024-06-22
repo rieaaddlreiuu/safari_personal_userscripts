@@ -8,11 +8,4 @@
 // @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
-(function() {
-
-    document.onload = function (){
-        var current_url = location.href;//現在のページのURLを取得
-        alert(current_url);
-    };
-    
-    })();
+alert("nafco");
