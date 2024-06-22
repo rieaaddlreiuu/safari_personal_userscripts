@@ -10,7 +10,7 @@
 // ==/UserScript==
 
 let elems = document.getElementsByClassName("d_flex flex-wrap_wrap gap_8px")
-alert("elems");
+alert(elems);
 /*
 <div class="d_flex flex-wrap_wrap gap_8px">
     <span class="d_inline-flex items_center p_3px_12px bg_#fff rounded_10000px fs_12px border_#d0d0d0_solid_1px white-space_nowrap">アニメ</span>
