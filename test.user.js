@@ -9,10 +9,10 @@
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
-let elems = document.getElementsByClassName("d_flex flex-wrap_wrap gap_8px")
-elems.forEach(element => {
-    alert(element);    
-});
+let elems = document.querySelectorAll("d_inline-flex items_center p_3px_12px bg_#fff rounded_10000px fs_12px border_#d0d0d0_solid_1px white-space_nowrap")
+for(let i=0;i<elems.length;i++){
+    alert(elems.innerHTML);
+}
 /*
 <div class="d_flex flex-wrap_wrap gap_8px">
     <span class="d_inline-flex items_center p_3px_12px bg_#fff rounded_10000px fs_12px border_#d0d0d0_solid_1px white-space_nowrap">アニメ</span>
