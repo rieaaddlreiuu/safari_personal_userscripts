@@ -10,6 +10,8 @@
 // ==/UserScript==
 (function(){
   "use strict";
-  let texts = document.body.outerHTML;
-  alert(texts);
+  addEventListener("load", () => {
+    let texts = document.body.outerHTML;
+    alert(texts);
+  });
 })();
