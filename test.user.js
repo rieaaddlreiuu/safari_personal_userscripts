@@ -9,7 +9,7 @@
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 (function(){
-  "use strict"
+  "use strict";
   let texts = document.body.outerHTML;
   alert(texts);
 })();
