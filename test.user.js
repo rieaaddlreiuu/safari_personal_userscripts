@@ -10,9 +10,10 @@
 // ==/UserScript==
 
 let elems = document.querySelectorAll("d_inline-flex items_center p_3px_12px bg_#fff rounded_10000px fs_12px border_#d0d0d0_solid_1px white-space_nowrap")
-for(let i=0;i<elems.length;i++){
+alert(elems[0].innerHTML);
+/*for(let i=0;i<elems.length;i++){
     alert(elems[i].innerHTML);
-}
+}*/
 /*
 <div class="d_flex flex-wrap_wrap gap_8px">
     <span class="d_inline-flex items_center p_3px_12px bg_#fff rounded_10000px fs_12px border_#d0d0d0_solid_1px white-space_nowrap">アニメ</span>
