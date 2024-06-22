@@ -9,7 +9,7 @@
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
-let elems = document.getElementsByClassName('d_inline-flex items_center bg_#fff white-space_nowrap')
+let elems = document.getElementsByClassName('d_inline-flex')
 alert(elems[0]);
 /*for(let i=0;i<elems.length;i++){
     alert(elems[i].innerHTML);
