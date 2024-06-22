@@ -6,6 +6,7 @@
 // @author You
 // @match https://www.nicovideo.jp/*
 // @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
+// @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
 alert("nafco");
