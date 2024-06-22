@@ -5,7 +5,7 @@
 // @description try to take over the world!
 // @author You
 // @match https://www.nicovideo.jp/*
-// @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.js
+// @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
 
 (function() {
