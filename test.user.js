@@ -29,7 +29,7 @@
     tags = document.getElementsByClassName(class_name);
     for(let i=0;i<tags.length;i++){
       let text = tags[i].innerHTML;
-      let result_html = '<a href="https://nicovideo.and-es.net/tag/'+text+'?o=views">'+text+'</a>';
+      let result_html = '<a href="https://nicovideo.and-es.net/tag/'+text+'?o=views" target="_blank">'+text+'</a>';
       tags[i].innerHTML = result_html;
     }
   });
