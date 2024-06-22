@@ -10,7 +10,6 @@
 // ==/UserScript==
 (function(){
   "use strict";
-  await wait(5);
   let texts = document.body.outerHTML;
   alert(texts);
 })();
