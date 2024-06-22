@@ -8,13 +8,8 @@
 // @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/test.user.js
 // ==/UserScript==
-
-let texts = document.body.outerHTML;
-alert(texts);
-
-window.addEventListener('DOMContentLoaded', function() {
+(function(){
+  "use strict"
   let texts = document.body.outerHTML;
   alert(texts);
-})
-
-  
+})();
