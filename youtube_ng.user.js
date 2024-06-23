@@ -4,8 +4,8 @@
 // @description try to take over the world!
 // @author You
 // @match https://www.youtube.com/watch*
-// @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/youtube_ng.user.js
-// @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/main/youtube_ng.user.js
+// @downloadURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/yt_comment_ng/youtube_ng.user.js
+// @updateURL https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/yt_comment_ng/youtube_ng.user.js
 // ==/UserScript==
 
 (function () {
