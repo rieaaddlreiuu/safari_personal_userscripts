@@ -1,3 +1,4 @@
+// ==UserScript== 
 // @name ようつべコメントNG機能です
 // @namespace http://tampermonkey.net/
 // @version 0.1
