@@ -39,7 +39,7 @@
             exec_function();
         }
     }
-    const ng_list = [
+    const ng_word_list = [
         'バカ',
         'アンチ',
         '信者'
@@ -50,8 +50,8 @@
                 let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
                 let text = "";
                 for (let i = 0; i < comment_elems.length; i++) {
-                    for(let j=0;j<ng_list.length;j++){
-                        if(comment_elems[i].innerHTML.indexOf(ng_list[j]) != -1){
+                    for(let j=0;j<ng_word_list.length;j++){
+                        if(comment_elems[i].innerHTML.indexOf(ng_word_list[j]) != -1){
                             comment_elems[i].innerHTML = '<font color="#008800">(NGワードを含んでいます。)</font>';
                         }
                     }
