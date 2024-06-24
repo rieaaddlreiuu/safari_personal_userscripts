@@ -49,12 +49,16 @@
             .then((element) => {
                 let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
                 let text = "";
+                let nodes,auther_elems;
                 for (let i = 0; i < comment_elems.length; i++) {
                     for(let j=0;j<ng_word_list.length;j++){
                         if(comment_elems[i].innerHTML.indexOf(ng_word_list[j]) != -1){
                             comment_elems[i].innerHTML = '<font color="#008800">(NGワードを含んでいます。)</font>';
                         }
                     }
+                    nodes = comment_elems[i].parentElement.parentElement.parentElement.parentElement;
+                    auther_elems = nodes.getElementsByClassName("style-scope ytd-comment-view-model style-scope ytd-comment-view-model");
+                    console.log(auther_elems.length);
                 }
             })
     });
