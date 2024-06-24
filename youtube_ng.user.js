@@ -45,7 +45,7 @@
         '信者'
     ];
     cyclicExecute(100, () => {
-        loadElementById(250, "contents")
+        loadElementById(10, "contents")
             .then((element) => {
                 let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
                 let text = "";
