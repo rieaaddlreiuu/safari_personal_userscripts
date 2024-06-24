@@ -45,6 +45,7 @@
         '信者'
     ];
     const ng_user_list = [
+        '@user-oh7wk4ci3f'
     ];
     cyclicExecute(20, () => {
         loadElementById(10, "contents")
