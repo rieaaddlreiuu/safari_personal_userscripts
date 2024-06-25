@@ -82,8 +82,6 @@
             const data = xhr.response;
             ng_user_list = data['ng_user'];
             ng_word_list = data['ng_words'];
-            console.log(ng_user_list);
-            console.log(ng_word_list);
           } else {
             console.log(`Error: ${xhr.status}`);
           }
