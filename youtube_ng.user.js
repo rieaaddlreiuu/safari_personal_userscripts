@@ -35,8 +35,8 @@
     }
     async function cyclicExecute(interval, exec_function) {
         while (1) {
-            await sleep(interval);
             exec_function();
+            await sleep(interval);
         }
     }
     const ng_word_list = [
