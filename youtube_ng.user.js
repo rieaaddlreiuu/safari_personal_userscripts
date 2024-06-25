@@ -39,14 +39,8 @@
             await sleep(interval);
         }
     }
-    const ng_word_list = [
-        'バカ',
-        'アンチ',
-        '信者'
-    ];
-    const ng_user_list = [
-        '@user-oh7wk4ci3f'
-    ];
+    let ng_word_list = [];
+    let ng_user_list = [];
     cyclicExecute(20, () => {
         loadElementById(10, "contents")
             .then((element) => {
@@ -68,6 +62,26 @@
                 }
             })
     });
+    cyclicExecute(3000,() => {
+        const xhr = new XMLHttpRequest();
+        xhr.onload = () => {
+          console.log(xhr.responseXML.title);
+        };
+        xhr.open("GET", "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/response.php");
+        xhr.responseType = "json";
+        xhr.send();
+        xhr.onload = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            ng_user_list = data['ng_user'];
+            ng_word_list = data['ng_words'];
+            console.log(ng_user_list);
+            console.log(ng_word_list);
+          } else {
+            console.log(`Error: ${xhr.status}`);
+          }
+        };
+    })
 })();
 /*
 <span class="yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap" dir="auto" role="text">
