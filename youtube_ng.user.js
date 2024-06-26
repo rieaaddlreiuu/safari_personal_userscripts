@@ -76,7 +76,7 @@
                     text_insert_area = nodes.querySelector("#published-time-text");
                     if(text_insert_area.querySelector("#block_feature") == null){
                         url = "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/?ng_type=user&ng_content="+user_name;
-                        text_insert_area.innerHTML = text_insert_area.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank">このユーザをブロック</a>'
+                        text_insert_area.innerHTML = text_insert_area.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank" style="text-decoration: none;">このユーザをブロック</a>'
                     }
                 }
             })
