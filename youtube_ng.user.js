@@ -61,11 +61,6 @@
                             comment_elems[i].innerHTML = '<font color="#008800">(NGユーザです。)</font>';
                         }
                     }
-                    e = nodes.querySelector("#published-time-text");
-                    if(e.querySelector("#block_feature") == null){
-                        url = "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/?ng_type=user&ng_content="+user_name;
-                        e.innerHTML = e.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank">このユーザをブロック</a>'
-                    }
                 }
             })
     });
