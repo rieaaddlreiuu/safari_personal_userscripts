@@ -35,8 +35,8 @@
     }
     async function cyclicExecute(interval, exec_function) {
         while (1) {
-            exec_function();
             await sleep(interval);
+            exec_function();
         }
     }
     let ng_word_list = [];
@@ -65,6 +65,23 @@
                     if(e.querySelector("#block_feature") == null){
                         url = "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/?ng_type=user&ng_content="+user_name;
                         e.innerHTML = e.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank">このユーザをブロック</a>'
+                    }
+                }
+            })
+    });
+    cyclicExecute(1000, () => {
+        loadElementById(10, "contents")
+            .then((element) => {
+                let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
+                let nodes, user_name;
+                let url,text_insert_area;
+                for (let i = 0; i < comment_elems.length; i++) {
+                    nodes = comment_elems[i].parentElement.parentElement.parentElement.parentElement;
+                    user_name = nodes.innerText.split('\n')[0];
+                    text_insert_area = nodes.querySelector("#published-time-text");
+                    if(text_insert_area.querySelector("#block_feature") == null){
+                        url = "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/?ng_type=user&ng_content="+user_name;
+                        text_insert_area.innerHTML = text_insert_area.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank">このユーザをブロック</a>'
                     }
                 }
             })
