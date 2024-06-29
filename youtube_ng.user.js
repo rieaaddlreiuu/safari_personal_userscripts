@@ -75,7 +75,7 @@
                     user_name = nodes.innerText.split('\n')[0];
                     text_insert_area = nodes.querySelector("#published-time-text");
                     if(text_insert_area.querySelector("#block_feature") == null){
-                        url = "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/?ng_type=user&ng_content="+user_name;
+                        url = "http://192.168.2.102/YoutubeNgListContain/set.php?ng_type=user&ng_content="+user_name;
                         text_insert_area.innerHTML = text_insert_area.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank" style="color: inherit;">このユーザをブロック</a>'
                     }
                 }
@@ -83,10 +83,7 @@
     });
     cyclicExecute(3000,() => {
         const xhr = new XMLHttpRequest();
-        xhr.onload = () => {
-          console.log(xhr.responseXML.title);
-        };
-        xhr.open("GET", "https://c4613fcd-88ff-4391-ba7c-0a38fd3fe235-00-3jcdujbqllie5.spock.replit.dev/response.php");
+        xhr.open("GET", "//192.168.2.102/YoutubeNgListContain/response.php");
         xhr.responseType = "json";
         xhr.send();
         xhr.onload = () => {
@@ -100,47 +97,3 @@
         };
     })
 })();
-/*
-<div id="header" class="style-scope ytd-comment-view-model">
-      <div id="pinned-comment-badge" class="style-scope ytd-comment-view-model"><ytd-pinned-comment-badge-renderer class="style-scope ytd-comment-view-model"><!--css-build:shady--><!--css-build:shady--><yt-icon size="12" class="style-scope ytd-pinned-comment-badge-renderer"><!--css-build:shady--><!--css-build:shady--><yt-icon-shape class="style-scope yt-icon"><icon-shape class="yt-spec-icon-shape"><div style="width: 100%; height: 100%; display: block; fill: currentcolor;"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" focusable="false" style="pointer-events: none; display: inherit; width: 100%; height: 100%;"><path d="M16 11V3h1V2H7v1h1v8l-2 2v2h5v6l1 1 1-1v-6h5v-2l-2-2zm1 3H7v-.59l1.71-1.71.29-.29V3h6v8.41l.29.29L17 13.41V14z"></path></svg></div></icon-shape></yt-icon-shape></yt-icon>
-<yt-formatted-string id="label" class="style-scope ytd-pinned-comment-badge-renderer">Kuvina Saydaki さんによって固定されています</yt-formatted-string>
-</ytd-pinned-comment-badge-renderer></div>
-      <div id="header-author" class="style-scope ytd-comment-view-model">
-        
-        <h3 class="style-scope ytd-comment-view-model"> 
-          <a id="author-text" class="yt-simple-endpoint style-scope ytd-comment-view-model" hidden="" href="/@Kuvina">
-            <span class="channel-owner style-scope ytd-comment-view-model style-scope ytd-comment-view-model">
-              @Kuvina
-            </span>
-          </a>
-        </h3>
-        <span id="author-comment-badge" class="style-scope ytd-comment-view-model"><ytd-author-comment-badge-renderer class="style-scope ytd-comment-view-model" standardize-icon-size="" creator="" style="--yt-basic-background-color: rgba(136,136,136,1.000); --yt-basic-foreground-title-color: rgba(255,255,255,1.000); --ytd-author-comment-badge-background-color: #888888; --ytd-author-comment-badge-name-color: #ffffff; --ytd-author-comment-badge-icon-color: #ffffff;"><!--css-build:shady--><!--css-build:shady--><a id="name" class="yt-simple-endpoint style-scope ytd-author-comment-badge-renderer" href="/@Kuvina">
-  <ytd-channel-name id="channel-name" class="style-scope ytd-author-comment-badge-renderer"><!--css-build:shady--><!--css-build:shady--><div id="container" class="style-scope ytd-channel-name">
-  <div id="text-container" class="style-scope ytd-channel-name">
-    <yt-formatted-string id="text" link-inherit-color="" respect-lang-dir="" title="@Kuvina" class="style-scope ytd-channel-name" ellipsis-truncate="" ellipsis-truncate-styling="" dir="auto" style="text-align: left;" is-empty="function(){var e=va.apply(0,arguments);a.loggingStatus.currentExternalCall=b;a.loggingStatus.bypassProxyController=!0;var g,k=((g=a.is)!=null?g:a.tagName).toLowerCase();mF(k,b,&quot;PROPERTY_ACCESS_CALL_EXTERNAL&quot;);var m;g=(m=c!=null?c:d[b])==null?void 0:m.call.apply(m,[d].concat(ha(e)));a.loggingStatus.currentExternalCall=void 0;a.loggingStatus.bypassProxyController=!1;return g}"><!--css-build:shady--><!--css-build:shady--><yt-attributed-string class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>
-  </div>
-  <tp-yt-paper-tooltip fit-to-visible-bounds="" class="style-scope ytd-channel-name" role="tooltip" tabindex="-1"><!--css-build:shady--><div id="tooltip" class="hidden style-scope tp-yt-paper-tooltip" style-target="tooltip">
-  <!--css-build:shady--><div id="tooltip" class="hidden style-scope tp-yt-paper-tooltip" style-target="tooltip">
-  
-    @Kuvina
-  
-</div>
-
-</div>
-</tp-yt-paper-tooltip>
-</div>
-<ytd-badge-supported-renderer class="style-scope ytd-channel-name" disable-upgrade="" hidden="">
-</ytd-badge-supported-renderer>
-</ytd-channel-name>
-</a>
-<yt-icon id="icon" size="12" class="style-scope ytd-author-comment-badge-renderer" hidden=""><!--css-build:shady--><!--css-build:shady--></yt-icon>
-</ytd-author-comment-badge-renderer></span>
-        <span id="sponsor-comment-badge" class="style-scope ytd-comment-view-model"></span>
-        <span dir="auto" id="published-time-text" class="style-scope ytd-comment-view-model">
-          <a class="yt-simple-endpoint style-scope ytd-comment-view-model" href="/watch?v=Uq6URzo9q6g&amp;lc=Ugxg_1ybv4kV5SbCwM54AaABAg">
-            1 か月前（編集済み）
-          </a>
-        </span>
-      <br><a href="" id="block_feature">このユーザをブロック</a></div>
-    </div>
-*/
