@@ -43,8 +43,9 @@
     let ng_user_list = [];
     let e;
     cyclicExecute(20, () => {
-        loadElementById(10, "contents")
-            .then((element) => {
+        loadElementById(10, "comments")
+            .then((e) => {
+                let element = e.querySelector("#contents");
                 let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
                 let nodes, user_name;
                 let url;
@@ -65,8 +66,9 @@
             })
     });
     cyclicExecute(1000, () => {
-        loadElementById(10, "contents")
-            .then((element) => {
+        loadElementById(10, "comments")
+            .then((e) => {
+                let element = e.querySelector("#contents");
                 let comment_elems = element.getElementsByClassName("yt-core-attributed-string yt-core-attributed-string--white-space-pre-wrap");
                 let nodes, user_name;
                 let url,text_insert_area;
