@@ -85,7 +85,7 @@
     });
     cyclicExecute(3000,() => {
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://test_server.local/YoutubeNgListContain/response.php");
+        xhr.open("GET", "https://192.168.2.102/YoutubeNgListContain/response.php");//test_server.local
         xhr.responseType = "json";
         xhr.send();
         xhr.onload = () => {
