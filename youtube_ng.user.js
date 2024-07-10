@@ -98,4 +98,19 @@
           }
         };
     })
+    cyclicExecute(3000,() => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://192.168.2.102/YoutubeNgListContain/response.php");
+        xhr.responseType = "json";
+        xhr.send();
+        xhr.onload = () => {
+          if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = xhr.response;
+            ng_user_list = data['ng_user'];
+            ng_word_list = data['ng_words'];
+          } else {
+            console.log(`Error: ${xhr.status}`);
+          }
+        };
+    })
 })();
