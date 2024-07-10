@@ -75,7 +75,7 @@
                     user_name = nodes.innerText.split('\n')[0];
                     text_insert_area = nodes.querySelector("#published-time-text");
                     if(text_insert_area.querySelector("#block_feature") == null){
-                        url = "http://192.168.2.102/YoutubeNgListContain/set.php?ng_type=user&ng_content="+user_name;
+                        url = "https://test_server.local/YoutubeNgListContain/set.php?ng_type=user&ng_content="+user_name;
                         text_insert_area.innerHTML = text_insert_area.innerHTML + '<a href="'+url+'" id="block_feature" target="_blank" style="color: inherit;">このユーザをブロック</a>'
                     }
                 }
@@ -83,7 +83,7 @@
     });
     cyclicExecute(3000,() => {
         const xhr = new XMLHttpRequest();
-        xhr.open("GET", "//192.168.2.102/YoutubeNgListContain/response.php");
+        xhr.open("GET", "https://test_server.local/YoutubeNgListContain/response.php");
         xhr.responseType = "json";
         xhr.send();
         xhr.onload = () => {
