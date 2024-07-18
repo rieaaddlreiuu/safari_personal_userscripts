@@ -28,9 +28,10 @@
         }
         let primary = document.getElementById("primary");
         if (primary != null) {
+            
             let comments = primary.querySelector("#comments");
             if (comments != null) {
-                //comments.style = "overflow: scroll; height: 80vh";
+                primary.style = "overflow: scroll; height: 180vh";
             }
             let video_description = primary.querySelector("#above-the-fold");
             if (video_description != null) {
