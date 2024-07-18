@@ -21,16 +21,36 @@
             exec_function();
         }
     }
-    cyclicExecute(100,() => {
+    cyclicExecute(100, () => {
         let related_videos = document.getElementById("secondary");
-        if(related_videos != null){
+        if (related_videos != null) {
             related_videos.style = "overflow: scroll; height: 180vh";
         }
         let primary = document.getElementById("primary");
-        if(primary != null){
+        if (primary != null) {
             let comments = primary.querySelector("#comments");
-            if(comments != null){
+            if (comments != null) {
                 comments.style = "overflow: scroll; height: 80vh";
+            }
+            let video_description = primary.querySelector("#above-the-fold");
+            if (video_description != null) {
+                if (video_description.querySelector("#added") == null) {
+                    video_description.setAttribute("id", "added");
+                    let onclick_scripts = `
+                    function func() {
+            let v_desc = document.getElementById("added");
+            if (v_desc.style == '') { 
+                v_desc.style = 'display: none;'; 
+            } else { 
+                v_desc.style = ''; 
+            }
+        }
+            `;
+                    video_description.insertAdjacentHTML('beforebegin', '<span onclick="document.getElementById(`added`).style = `display: none; height: 1px`" style="font-size: 12px;">隠す　</span>');
+                    video_description.insertAdjacentHTML('beforebegin', '<span onclick="document.getElementById(`added`).style = ``" style="font-size: 12px;">戻す</span>');
+                    //video_description.insertAdjacentHTML('beforebegin', '<script>' + onclick_scripts + '</script>');
+                    //'<div onclick="func();">隠す</div>'
+                }
             }
         }
     })
