@@ -30,7 +30,7 @@
         if (primary != null) {
             let comments = primary.querySelector("#comments");
             if (comments != null) {
-                comments.style = "overflow: scroll; height: 80vh";
+                //comments.style = "overflow: scroll; height: 80vh";
             }
             let video_description = primary.querySelector("#above-the-fold");
             if (video_description != null) {
