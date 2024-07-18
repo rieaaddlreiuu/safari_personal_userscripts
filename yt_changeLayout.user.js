@@ -24,14 +24,14 @@
     cyclicExecute(100, () => {
         let related_videos = document.getElementById("secondary");
         if (related_videos != null) {
-            related_videos.style = "overflow: scroll; height: 100vh";
+            related_videos.style = "overflow: scroll; height: 90vh";
         }
         let primary = document.getElementById("primary");
         if (primary != null) {
             
             let comments = primary.querySelector("#comments");
             if (comments != null) {
-                primary.style = "overflow: scroll; height: 100vh";
+                primary.style = "overflow: scroll; height: 90vh";
             }
             let video_description = primary.querySelector("#above-the-fold");
             if (video_description != null) {
