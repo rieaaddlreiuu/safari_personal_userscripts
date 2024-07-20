@@ -37,7 +37,7 @@
         }
     }
     const element = ``
-    cyclicExecute(3000, () => {
+    cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
             let url_head = location.href.substring(0, 8);
             let url_tail = location.href.substring(9);
