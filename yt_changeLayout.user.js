@@ -25,7 +25,7 @@
         let related_videos = document.getElementById("secondary");
         if (related_videos != null) {
             related_videos.style = "";
-            document.getElementById("secondary-inner").style = "position: fixed; right: 5vh; overflow: scroll; height: 90vh; width: 50vh;";
+            document.getElementById("secondary-inner").style = "position: fixed; right: 5vh; overflow-x: hidden; overflow-y: scroll; height: 90vh; width: 50vh;";
         }
         let primary = document.getElementById("primary");
         if (primary != null) {
