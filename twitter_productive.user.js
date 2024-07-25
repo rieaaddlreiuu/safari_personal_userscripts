@@ -53,8 +53,8 @@
     function random(min, max) {
         return Math.random() * (max - min) + min;
     }
-    let quiz_position = 100;
-    cyclicExecute(1000, () => {
+    let quiz_position = random(200, 1000);
+    cyclicExecute(100, () => {
         /*tweetsForEach((tweet) => {
             if (tweet.getAttribute("id") != "processed") {
                 tweet.setAttribute("id", "processed");
@@ -82,8 +82,8 @@
                 //tweet.parentNode.insertAdjacentHTML("beforebegin",'<div class="css-175oi2r r-j5o65s r-qklmqi r-1adg3ll r-1ny4l3l">'+tweet.innerHTML+'</div>');
             }
         })*/
-        quiz_position += random(200, 1000);
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
+        console.log(timeline_rect.height);
         if (quiz_position < timeline_rect.height) {
             let left_margin = document.querySelector('[role="banner"]').getBoundingClientRect().width;
             let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; left: ` + left_margin + `px; z-index: 10000; background-color: #FFFFFF; width: ` + timeline_rect.width + `px;">물리학 입문 <b>과제</b>가 너무 많다!太字部分の意味は？<br>
@@ -101,6 +101,7 @@
                     this.parentNode.style = "display:none;";
                 });
             }
+            quiz_position += random(200, 1000);
         }
     })
 })();
