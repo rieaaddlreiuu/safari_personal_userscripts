@@ -58,7 +58,7 @@
     function random(min, max) {
         return Math.random() * (max - min) + min;
     }
-    let quiz_position = 1000;
+    let quiz_position = 3000;
     let style = document.createElement('style');
     style.innerHTML = `
         .button019 a {
@@ -141,7 +141,7 @@
                     this.parentNode.style = "display:none;";
                 });
             }
-            quiz_position += random(600, 3000);
+            quiz_position += random(1000, 3000);
         }
     })
 })();
