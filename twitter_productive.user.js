@@ -9,6 +9,11 @@
 // ==/UserScript==
 
 (function () {
+    function import_script(src) {
+        let script = document.createElement('script');
+        script.src = src;
+        document.head.appendChild(script);
+    }
     function sleep(ms) {
         return new Promise(function (resolve) {
             setTimeout(function () {
@@ -54,6 +59,57 @@
         return Math.random() * (max - min) + min;
     }
     let quiz_position = random(200, 1000);
+    let style = document.createElement('style');
+    style.innerHTML = `
+        .button019 a {
+    background: #eee;
+    border-radius: 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 280px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+}
+.button019 a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  right: 2rem;
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s;
+  width: 6px;
+  height: 6px;
+  border-top: solid 2px currentColor;
+  border-right: solid 2px currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+.button019 a:hover {
+  background: #6bb6ff;
+  color: #FFF;
+}
+.button019 a:hover:after {
+  right: 1.4rem;
+}
+.box1 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    border: solid 3px #000000;
+}
+.box1 p {
+    margin: 0; 
+    padding: 0;
+}
+`;
+    document.head.appendChild(style);
     cyclicExecute(100, () => {
         /*tweetsForEach((tweet) => {
             if (tweet.getAttribute("id") != "processed") {
@@ -86,18 +142,29 @@
         console.log(timeline_rect.height);
         if (quiz_position < timeline_rect.height) {
             let left_margin = document.querySelector('[role="banner"]').getBoundingClientRect().width;
-            let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; left: ` + left_margin + `px; z-index: 10000; background-color: #FFFFFF; width: ` + timeline_rect.width + `px;">물리학 입문 <b>과제</b>가 너무 많다!太字部分の意味は？<br>
-            <div>(1) 価値</div>
-            <div class="correct_answer">(2) 課題</div>
-            <div>(3) 内容</div>
+            let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; left: ` + left_margin + `px; z-index: 10000; background-color: #FFFFFF; width: ` + timeline_rect.width + `px; color: #000000;">
+            <div class="box1">
+            물리학 입문 <b>과제</b>가 너무 많다!
+            
+            太字部分の意味は？
+            </div>
+            <div class="button019">
+	            <a>価値</a>
+            </div>
+            <div class="button019 correct_answer">
+	            <a>課題</a>
+            </div>
+            <div class="button019">
+	            <a>内容</a>
+            </div>
                     <details>
                     <summary>答え</summary>
                     (2)の「課題」！
                     </details></div>`;
             document.getElementById("react-root").children[0].children[0].children[0].insertAdjacentHTML("afterend", test_html);
             let correct_answer_elements = document.getElementsByClassName("correct_answer");
-            for(let i=0;i<correct_answer_elements.length;i++){
-                correct_answer_elements[i].addEventListener("click", function (){
+            for (let i = 0; i < correct_answer_elements.length; i++) {
+                correct_answer_elements[i].addEventListener("click", function () {
                     this.parentNode.style = "display:none;";
                 });
             }
