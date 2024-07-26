@@ -117,9 +117,9 @@
             let left_margin = document.querySelector('[role="banner"]').getBoundingClientRect().width;
             let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; left: ` + left_margin + `px; z-index: 10000; background-color: #FFFFFF; width: ` + timeline_rect.width + `px; color: #000000;">
             <div class="box1">
-            물리학 입문 <b>과제</b>가 너무 많다!
+            물리학 입문 (과제)가 너무 많다!
             
-            太字部分の意味は？
+        ()部分の意味は？
             </div>
             <div class="button019">
 	            <a>価値</a>
