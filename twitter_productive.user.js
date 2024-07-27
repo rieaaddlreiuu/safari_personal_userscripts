@@ -8,11 +8,11 @@
 // @grant        GM_getResourceText
 // @match https://twitter.com/*
 // @match https://x.com/*
-// @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css?token=GHSAT0AAAAAACTAKNWRXIRZRTZKO4L2YFL2ZVE4AYA
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTAKNWQLRH5DE64FN6C7VTCZVE5MYQ
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
 // ==/UserScript==
 
+//Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css?token=GHSAT0AAAAAACTAKNWRXIRZRTZKO4L2YFL2ZVE4AYA
 (function () {
     function is_twitter(url_string) {
         if (url_string[8] == 'x') {
