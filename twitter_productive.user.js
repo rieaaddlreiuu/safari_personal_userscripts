@@ -8,7 +8,7 @@
 // @grant        GM_getResourceText
 // @match https://twitter.com/*
 // @match https://x.com/*
-// @require 
+// @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css?token=GHSAT0AAAAAACTAKNWRXIRZRTZKO4L2YFL2ZVE4AYA
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
 // ==/UserScript==
 
@@ -32,53 +32,11 @@
             location.href = url;
         }
     })
-    class quiz_object {
-        statement;
-        choices;
-        correct_answer_number;
-        constructor(statement, choice_list, correct_answer_number) {
-            this.statement = statement;
-            this.choices = choice_list;
-            this.correct_answer_number = correct_answer_number;
-        };
-        outputQuizHtml() {
-            let random_sequence = generateRandomSequence(this.choices.length);
-            let choices_html = "";
-            for (let i = 0; i < this.choices.length; i++) {
-                if (this.correct_answer_number == random_sequence[i]) {
-                    choices_html = choices_html + `<span class="button019 correct_answer">
-	                <a>` + this.choices[random_sequence[i]] + `</a>
-                    </span>`;
-                } else {
-                    choices_html = choices_html + `<span class="button019">
-	                <a>` + this.choices[random_sequence[i]] + `</a>
-                    </span>`;
-                }
-            }
-            let show_answer_html = `
-            <div class="button019 show_answer">
-                <a>答えを見る</a>
-                <div class="answer box1" style="display:none;">
-                ` + this.choices[this.correct_answer_number] + `
-                </div>
-            </div>
-            `;
-            let statement_html = `
-            <div class="box1">
-            ` + this.statement + `
-            </div>
-            `;
-            return statement_html + choices_html + show_answer_html;
-        };
-    };
-    const quiz_list = [
-        //new quiz_object("과제の意味は？",["価値","課題","内容"],1),
-        new quiz_object("", ["", "", ""], 0),
-    ];
     let quiz_position = 3000;
-    let style = document.createElement('style');
+    GM_addStyle(GM_getResourceText("Twipro_css"))
+    /*let style = document.createElement('style');
     style.innerHTML = '';
-    document.head.appendChild(style);
+    document.head.appendChild(style);*/
     cyclicExecute(100, () => {
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
         if (quiz_position < timeline_rect.height) {
