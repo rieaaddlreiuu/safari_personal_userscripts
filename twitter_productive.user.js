@@ -9,11 +9,6 @@
 // ==/UserScript==
 
 (function () {
-    function import_script(src) {
-        let script = document.createElement('script');
-        script.src = src;
-        document.head.appendChild(script);
-    }
     function sleep(ms) {
         return new Promise(function (resolve) {
             setTimeout(function () {
@@ -41,7 +36,6 @@
             }
         }
     }
-    const element = ``
     cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
             let url_head = location.href.substring(0, 8);
@@ -56,8 +50,66 @@
         }
     })
     function random(min, max) {
-        return Math.random() * (max - min) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+    function generateRandomSequence(length) {
+        let sequence = [];
+        for (let i = 0; i < length; i++) {
+            sequence.push(i);
+        }
+        let work, index;
+        for (let i = 0; i < length; i++) {
+            //swap i,random(0,length - 1)
+            work = sequence[i];
+            index = random(0, length - 1);
+            sequence[i] = sequence[index];
+            sequence[index] = work;
+        }
+        return sequence
+    }
+    class quiz_object {
+        statement;
+        choices;
+        correct_answer_number;
+        constructor(statement, choice_list, correct_answer_number) {
+            this.statement = statement;
+            this.choices = choice_list;
+            this.correct_answer_number = correct_answer_number;
+        };
+        outputQuizHtml() {
+            let random_sequence = generateRandomSequence(this.choices.length);
+            let choices_html = "";
+            for (let i = 0; i < this.choices.length; i++) {
+                if (this.correct_answer_number == random_sequence[i]) {
+                    choices_html = choices_html + `<span class="button019 correct_answer">
+	                <a>` + this.choices[random_sequence[i]] + `</a>
+                    </span>`;
+                } else {
+                    choices_html = choices_html + `<span class="button019">
+	                <a>` + this.choices[random_sequence[i]] + `</a>
+                    </span>`;
+                }
+            }
+            let show_answer_html = `
+            <div class="button019 show_answer">
+                <a>答えを見る</a>
+                <div class="answer box1" style="display:none;">
+                ` + this.choices[this.correct_answer_number] + `
+                </div>
+            </div>
+            `;
+            let statement_html = `
+            <div class="box1">
+            ` + this.statement + `
+            </div>
+            `;
+            return statement_html + choices_html + show_answer_html;
+        };
+    };
+    const quiz_list = [
+        //new quiz_object("과제の意味は？",["価値","課題","内容"],1),
+        new quiz_object("", ["", "", ""], 0),
+    ];
     let quiz_position = 3000;
     let style = document.createElement('style');
     style.innerHTML = `
@@ -112,35 +164,25 @@
     document.head.appendChild(style);
     cyclicExecute(100, () => {
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
-        console.log(timeline_rect.height);
         if (quiz_position < timeline_rect.height) {
             let left_margin = document.querySelector('[role="banner"]').getBoundingClientRect().width;
-            let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; left: ` + left_margin + `px; z-index: 10000; background-color: #FFFFFF; width: ` + timeline_rect.width + `px; color: #000000;">
-            <div class="box1">
-            물리학 입문 (과제)가 너무 많다!
-            
-        ()部分の意味は？
-            </div>
-            <div class="button019">
-	            <a>価値</a>
-            </div>
-            <div class="button019 correct_answer">
-	            <a>課題</a>
-            </div>
-            <div class="button019">
-	            <a>内容</a>
-            </div>
-                    <details>
-                    <summary>答え</summary>
-                    (2)の「課題」！
-                    </details></div>`;
+            let quiz_id = "TwiProQuiz-" + quiz_position;
+            let test_html = `<div style="position:absolute; top: ` + quiz_position + `px; 
+            left: ` + left_margin + `px; 
+            z-index: 10000; 
+            background-color: #FFFFFF; 
+            width: ` + timeline_rect.width + `px; 
+            color: #000000;" 
+            id="` + quiz_id + `">` + quiz_list[random(0, quiz_list.length - 1)].outputQuizHtml() + `</div>`;
             document.getElementById("react-root").children[0].children[0].children[0].insertAdjacentHTML("afterend", test_html);
-            let correct_answer_elements = document.getElementsByClassName("correct_answer");
-            for (let i = 0; i < correct_answer_elements.length; i++) {
-                correct_answer_elements[i].addEventListener("click", function () {
-                    this.parentNode.style = "display:none;";
-                });
-            }
+            let quiz_element = document.getElementById(quiz_id);
+            quiz_element.getElementsByClassName("correct_answer")[0].addEventListener('click', function () {
+                quiz_element.style = "display:none;";
+            });
+            quiz_element.getElementsByClassName("show_answer")[0].addEventListener('click', function () {
+                this.children[1].style = "";
+            });
+
             quiz_position += random(1000, 3000);
         }
     })
