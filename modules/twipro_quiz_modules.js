@@ -34,10 +34,6 @@ class quizObject {
         ` + this.statement + `
         </div>
         `;
-        return statement_html + choices_html + show_answer_html;
+        return statement_html + choices_html + '<br>' + show_answer_html;
     };
 };
-const quiz_list = [
-    //new quiz_object("과제の意味は？",["価値","課題","内容"],1),
-    new quizObject("", ["", "", ""], 0),
-];

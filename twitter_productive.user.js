@@ -9,6 +9,7 @@
 // @match https://twitter.com/*
 // @match https://x.com/*
 // @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css?token=GHSAT0AAAAAACTAKNWRXIRZRTZKO4L2YFL2ZVE4AYA
+// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTAKNWQLRH5DE64FN6C7VTCZVE5MYQ
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
 // ==/UserScript==
 
@@ -34,9 +35,10 @@
     })
     let quiz_position = 3000;
     GM_addStyle(GM_getResourceText("Twipro_css"))
-    /*let style = document.createElement('style');
-    style.innerHTML = '';
-    document.head.appendChild(style);*/
+    const quiz_list = [
+        new quizObject("과제の意味は？",["価値","課題","内容"],1),
+        new quizObject("Test", ["a", "b", "c"], 0)
+    ];
     cyclicExecute(100, () => {
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
         if (quiz_position < timeline_rect.height) {
