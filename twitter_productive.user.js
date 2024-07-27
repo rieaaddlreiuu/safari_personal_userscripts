@@ -4,8 +4,11 @@
 // @version 0.1
 // @description ついでにx.comをtwitter.comに遷移させます
 // @author You
+// @grant        GM_addStyle
+// @grant        GM_getResourceText
 // @match https://twitter.com/*
 // @match https://x.com/*
+// @require 
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
 // ==/UserScript==
 
@@ -15,14 +18,6 @@
             return false;
         }
         return true;
-    }
-    function tweetsForEach(process_function) {
-        let lists = document.getElementsByClassName("css-175oi2r");
-        for (let i = 0; i < lists.length; i++) {
-            if (lists[i].dataset.testid == "cellInnerDiv") {
-                process_function(lists[i]);
-            }
-        }
     }
     cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
@@ -82,55 +77,7 @@
     ];
     let quiz_position = 3000;
     let style = document.createElement('style');
-    style.innerHTML = `
-        .button019 a {
-    background: #eee;
-    border-radius: 3px;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 280px;
-    padding: 10px 25px;
-    color: #313131;
-    transition: 0.3s ease-in-out;
-    font-weight: 500;
-}
-.button019 a:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  bottom: 0;
-  right: 2rem;
-  font-size: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: right 0.3s;
-  width: 6px;
-  height: 6px;
-  border-top: solid 2px currentColor;
-  border-right: solid 2px currentColor;
-  transform: translateY(-50%) rotate(45deg);
-}
-.button019 a:hover {
-  background: #6bb6ff;
-  color: #FFF;
-}
-.button019 a:hover:after {
-  right: 1.4rem;
-}
-.box1 {
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px #000000;
-}
-.box1 p {
-    margin: 0; 
-    padding: 0;
-}
-`;
+    style.innerHTML = '';
     document.head.appendChild(style);
     cyclicExecute(100, () => {
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
