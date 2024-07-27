@@ -6,22 +6,10 @@
 // @author You
 // @match https://twitter.com/*
 // @match https://x.com/*
+// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
 // ==/UserScript==
 
 (function () {
-    function sleep(ms) {
-        return new Promise(function (resolve) {
-            setTimeout(function () {
-                resolve()
-            }, ms)
-        })
-    }
-    async function cyclicExecute(interval, exec_function) {
-        while (1) {
-            await sleep(interval);
-            exec_function();
-        }
-    }
     function is_twitter(url_string) {
         if (url_string[8] == 'x') {
             return false;
@@ -49,24 +37,6 @@
             location.href = url;
         }
     })
-    function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    function generateRandomSequence(length) {
-        let sequence = [];
-        for (let i = 0; i < length; i++) {
-            sequence.push(i);
-        }
-        let work, index;
-        for (let i = 0; i < length; i++) {
-            //swap i,random(0,length - 1)
-            work = sequence[i];
-            index = random(0, length - 1);
-            sequence[i] = sequence[index];
-            sequence[index] = work;
-        }
-        return sequence
-    }
     class quiz_object {
         statement;
         choices;
