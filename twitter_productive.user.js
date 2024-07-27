@@ -34,7 +34,7 @@
         }
     })
     let quiz_position = 3000;
-    GM_addStyle(GM_getResourceText("Twipro_css"))
+    //GM_addStyle(GM_getResourceText("Twipro_css"))
     const quiz_list = [
         new quizObject("과제の意味は？",["価値","課題","内容"],1),
         new quizObject("Test", ["a", "b", "c"], 0)
