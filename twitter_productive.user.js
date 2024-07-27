@@ -4,8 +4,6 @@
 // @version 0.1
 // @description ついでにx.comをtwitter.comに遷移させます
 // @author You
-// @grant        GM_addStyle
-// @grant        GM_getResourceText
 // @match https://twitter.com/*
 // @match https://x.com/*
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTAKNWQLRH5DE64FN6C7VTCZVE5MYQ
