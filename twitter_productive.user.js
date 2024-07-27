@@ -5,7 +5,7 @@
 // @description ついでにx.comをtwitter.comに遷移させます
 // @author You
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTAKNWQLRH5DE64FN6C7VTCZVE5MYQ
-// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTAKNWRBBITWSXZN7AE4GOGZVE23PQ
+// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTHY7EZZROJFYCXN4HX3N6KZVFFLNQ
 // @match https://twitter.com/*
 // @match https://x.com/*
 // ==/UserScript==
