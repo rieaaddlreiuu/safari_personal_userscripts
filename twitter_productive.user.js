@@ -6,7 +6,7 @@
 // @author You
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTHY7EZNPGBQSEBAT5QGGFKZVFFMNQ
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTHY7EZZROJFYCXN4HX3N6KZVFFLNQ
-// @require https://raw.githubusercontent.com/rieaaddlreiuu/rieaaddlreiuu/main/files/twipro_quiz_data.js
+// @require https://test_server.local/index/products/output/twipro_output.js
 // @match https://twitter.com/*
 // @match https://x.com/*
 // ==/UserScript==
