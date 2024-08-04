@@ -25,7 +25,7 @@ class quizObject {
         <div class="button019 show_answer">
             <a>答えを見る</a>
             <div class="answer box1" style="display:none;">
-            ` + this.choices[this.correct_answer_number] + `
+            ` + /*this.choices[this.correct_answer_number]*/ `非表示です` + `
             </div>
         </div>
         `;
