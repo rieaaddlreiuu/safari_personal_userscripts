@@ -65,7 +65,6 @@
     padding: 0;
 }
 `;
-    style.innerHTML = '';
     document.head.appendChild(style);
     cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
