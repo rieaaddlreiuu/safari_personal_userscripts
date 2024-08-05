@@ -70,7 +70,7 @@
 }
     `;*/
     GM_addStyle(GM_getResourceText("Twipro_css"))
-    document.head.appendChild(quiz_style);
+    //document.head.appendChild(quiz_style);
     cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
             let url_head = location.href.substring(0, 8);
