@@ -4,8 +4,9 @@
 // @version 0.1
 // @description ついでにx.comをtwitter.comに遷移させます
 // @author You
-// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js?token=GHSAT0AAAAAACTHY7EZNPGBQSEBAT5QGGFKZVFFMNQ
-// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js?token=GHSAT0AAAAAACTHY7EZZROJFYCXN4HX3N6KZVFFLNQ
+// @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css
+// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js
+// @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/rieaaddlreiuu/main/files/twipro_quiz_data.js
 // @match https://twitter.com/*
 // @match https://x.com/*
@@ -18,7 +19,7 @@
         }
         return true;
     }
-    let quiz_style = document.createElement('style');
+    /*let quiz_style = document.createElement('style');
     quiz_style.innerHTML = `
 .button019 a {
     background: #eee;
@@ -67,7 +68,8 @@
     margin: 0; 
     padding: 0;
 }
-    `;
+    `;*/
+    GM_addStyle(GM_getResourceText("Twipro_css"))
     document.head.appendChild(quiz_style);
     cyclicExecute(1000, () => {
         if (!is_twitter(location.href)) {
