@@ -1,17 +1,17 @@
-// ==UserScript== 
+// ==UserScript==
 // @name twitterを生産的にします
 // @namespace http://tampermonkey.net/
 // @version 0.1
-// @description ついでにx.comをtwitter.comに遷移させます
+// @description try to take over the world!
 // @author You
 // @grant        GM_addStyle
 // @grant        GM_getResourceText
+// @match https://twitter.com/*
+// @match https://x.com/*
 // @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/rieaaddlreiuu/main/files/twipro_quiz_data.js
-// @match https://twitter.com/*
-// @match https://x.com/*
 // ==/UserScript==
 
 (function () {
