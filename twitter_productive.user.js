@@ -4,6 +4,8 @@
 // @version 0.1
 // @description ついでにx.comをtwitter.comに遷移させます
 // @author You
+// @grant        GM_addStyle
+// @grant        GM_getResourceText
 // @resource Twipro_css https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/style.css
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/twipro_quiz_modules.js
 // @require https://raw.githubusercontent.com/rieaaddlreiuu/safari_personal_userscripts/develop/twitter_productive/modules/basic_features.js
