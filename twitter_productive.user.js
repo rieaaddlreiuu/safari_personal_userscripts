@@ -4,8 +4,6 @@
 // @version 0.1
 // @description try to take over the world!
 // @author You
-// @grant        GM_addStyle
-// @grant        GM_getResourceText
 // @match https://twitter.com/*
 // @match https://x.com/*
 // ==/UserScript==
