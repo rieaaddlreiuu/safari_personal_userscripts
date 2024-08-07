@@ -102,7 +102,7 @@
                 this.children[1].style = "";
             });
 
-            quiz_position += random(1000, 3000);
+            quiz_position += 3000;
         }
     })
 })();
