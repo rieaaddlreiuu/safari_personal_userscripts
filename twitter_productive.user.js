@@ -124,6 +124,7 @@
                 position:fixed;
                 bottom: 90px;
                 right: 30px;
+                z-index: 1000;
             "></div>`);
         }
         console.log(set_quiz_time);
