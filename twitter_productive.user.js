@@ -126,6 +126,7 @@
                 right: 30px;
                 z-index: 1000;
             "></div>`);
+            //にゃーん
         }
         console.log(set_quiz_time);
         set_quiz_time--;
