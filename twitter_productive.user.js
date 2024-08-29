@@ -140,5 +140,3 @@
         set_quiz_time--;
     })
 })();
-
-//くそがくそuhadvcuwvue
