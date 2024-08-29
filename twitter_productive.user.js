@@ -121,7 +121,7 @@
             quiz_element.getElementsByClassName("show_answer")[0].addEventListener('click', function () {
                 this.children[1].style = "";
             });
-            set_quiz_time += 20 * f((CA_count) / (WA_count + CA_count));
+            set_quiz_time += f((CA_count) / (WA_count + CA_count));
         }
         if (document.getElementById("time_display") != null) {
             document.getElementById("time_display").innerHTML = `
