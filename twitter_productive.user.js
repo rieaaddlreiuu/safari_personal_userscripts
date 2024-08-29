@@ -119,8 +119,8 @@
                 this.children[1].style = "";
             });
             set_quiz_time = 1;
-            document.getElementById("time_display").innerHTML = set_quiz_time;
         }
+        document.getElementById("time_display").innerHTML = set_quiz_time;
         console.log(set_quiz_time);
         set_quiz_time--;
     })
