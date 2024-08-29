@@ -16,7 +16,7 @@ class quizObject {
                 <a>` + this.choices[random_sequence[i]] + `</a>
                 </span>`;
             } else {
-                choices_html = choices_html + `<span class="button019">
+                choices_html = choices_html + `<span class="button019 wrong_answer">
                 <a>` + this.choices[random_sequence[i]] + `</a>
                 </span>`;
             }
