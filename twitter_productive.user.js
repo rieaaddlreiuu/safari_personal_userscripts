@@ -85,7 +85,11 @@
     let CA_count = 1;
     const quiz_list = TwiproData();
     function f(x){
-        return -10*Math.log(1-x);
+        if(x < 0.9){
+            return -10*Math.log(1-x);
+        } else {
+            return 998244353;
+        }
     }
     cyclicExecute(1000, () => {
         let timeline_rect = document.querySelector('[role="main"]').getBoundingClientRect();
@@ -123,10 +127,13 @@
             });
             set_quiz_time += f((CA_count) / (WA_count + CA_count));
         }
+        console.log(set_quiz_time);
+        set_quiz_time--;
+        sleep(27);
         if (document.getElementById("time_display") != null) {
             document.getElementById("time_display").innerHTML = `
             出題までの時間 : `+set_quiz_time+`<br>
-            正答率 : `+ (CA_count) / (WA_count + CA_count)+`(%)
+            正答率 : `+ ((100*CA_count) / (WA_count + CA_count))+`(%)
             `;
         } else {
             document.getElementById("react-root").children[0].children[0].children[0].insertAdjacentHTML("afterend", `<div id="time_display" style="
@@ -136,8 +143,6 @@
                 z-index: 1000;
             "></div>`);
         }
-        console.log(set_quiz_time);
-        set_quiz_time--;
     })
 })();
 
