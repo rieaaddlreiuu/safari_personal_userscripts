@@ -85,7 +85,7 @@
     let CA_count = 1;
     const quiz_list = TwiproData();
     function f(x){
-        if(x < 0.9){
+        if(x < 0.8){
             return -10*Math.log(1-x);
         } else {
             return 998244353;
